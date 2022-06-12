@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>zozo.log - pt 🇧🇷 🇵🇹</title>
+    <link href="https://logs-pt.zozo.dev.br/feed.xml" rel="self" />
+    <link href="https://logs-pt.zozo.dev.br" />
+    <updated>2022-06-12T20:23:53-03:00</updated>
+    <author>
+        <name>Thiago (Zozô) Ozores 🇧🇷</name>
+    </author>
+    <id>https://logs-pt.zozo.dev.br</id>
+
+    <entry>
+        <title>Diagramas como Código</title>
+        <author>
+            <name>Thiago (Zozô) Ozores 🇧🇷</name>
+        </author>
+        <link href="https://logs-pt.zozo.dev.br/diagramas-como-codigo.html"/>
+        <id>https://logs-pt.zozo.dev.br/diagramas-como-codigo.html</id>
+            <category term="python"/>
+            <category term="diagramas"/>
+
+        <updated>2022-06-12T20:23:53-03:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://logs-pt.zozo.dev.br/media/posts/5/python-diagrama-3.png" alt="" />
+                    <p>Venha, venha, venha descobrir como gerar diagramas usando código Python!!</p>
+
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://logs-pt.zozo.dev.br/media/posts/5/python-diagrama-3.png" alt="" />
+                <p>Venha, venha, venha descobrir como gerar diagramas usando código Python!!</p>
+
+
+<p>No meu dia-a-dia de instrutor, um dos trabalhos é a criação de diagramas que ilustrem de forma clara para os alunos o tópico que está sendo apresentado, existem muitas boas ferramentas gráficas online como o <a href="https://draw.io">draw.io</a>, <a href="https://www.lucidchart.com">LucidChart</a>, entre outras.</p>
+<p>Porém apesar dessas ferramentas serem bem intuitivas e fáceis de usar, quando você precisa escalar a criação de diagramas, precisa criar diagramas trazendo informações de ferramentas externas ou mesmo criar diagramas simples de forma rápida, você acaba esbarrando em problemas nas opções de formatação e na falta de uma automação dessas ferramentas, que dificultam a criação de uma “fábrica” de diagramas.</p>
+<p>Pensando neste cenário, o Python tem um pacote que pode ser utilizado para representar e gerar diagramas como código, facilitando a criação dessa “fábrica”.</p>
+<p>O pacote se chama <a href="https://diagrams.mingrammer.com">diagrams</a> e ele tem uma forma bem interessante de funcionamento, ele faz uso da sobrecarga de operadores do Python para realizar de forma mais intuitiva a ligação que os nós terão nos gráficos do diagrama. Por exemplo: </p>
+<ul>
+<li>O operador <code>&gt;&gt;</code> representa uma ligação da direita para esquerda</li>
+<li>O operador <code>&lt;&lt;</code> representa uma ligação da esquerda para direita</li>
+<li>O operador <code>-</code> representa uma ligação sem direção</li>
+<li>E ainda é possível fazer ligações bidirecionais usando a classe <code>Edge</code></li>
+</ul>
+<p>Se você procura uma forma mais programatica de gerar diagramas, vale a pena dar uma olhada nesse pacote.</p>
+<p>Abaixo seguem alguns exemplos que eu desenvolvi, que podem ser testados no <a href="https://colab.research.google.com/drive/1MrlVVFXAAMvuQJ8m-qkyY05wnurAl5uQ?usp=sharing">Google Colab</a></p>
+<script src="https://gist.github.com/ozorest/c19718ac3d3bdcd0cbc3c8a96d093e48.js"></script>
+            ]]>
+        </content>
+    </entry>
+</feed>
