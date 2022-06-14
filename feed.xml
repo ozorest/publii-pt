@@ -3,12 +3,67 @@
     <title>zozo.log - pt 🇧🇷 🇵🇹</title>
     <link href="https://logs-pt.zozo.dev.br/feed.xml" rel="self" />
     <link href="https://logs-pt.zozo.dev.br" />
-    <updated>2022-06-12T20:23:53-03:00</updated>
+    <updated>2022-06-13T23:55:39-03:00</updated>
     <author>
         <name>Thiago (Zozô) Ozores 🇧🇷</name>
     </author>
     <id>https://logs-pt.zozo.dev.br</id>
 
+    <entry>
+        <title>Rodando um fluxo do Github Actions localmente</title>
+        <author>
+            <name>Thiago (Zozô) Ozores 🇧🇷</name>
+        </author>
+        <link href="https://logs-pt.zozo.dev.br/rodando-um-fluxo-do-github-actions-localmente.html"/>
+        <id>https://logs-pt.zozo.dev.br/rodando-um-fluxo-do-github-actions-localmente.html</id>
+            <category term="github"/>
+            <category term="docker"/>
+            <category term="cicd"/>
+
+        <updated>2022-06-13T23:55:39-03:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://logs-pt.zozo.dev.br/media/posts/7/65916846.png" alt="" />
+                    <p>É isso mesmo que você leu! Aprenda aqui como rodar um fluxo do Github Actions sem precisar fazer o push do seu código para o repositório, diretamente da sua máquina.</p>
+
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://logs-pt.zozo.dev.br/media/posts/7/65916846.png" alt="" />
+                <p>É isso mesmo que você leu! Aprenda aqui como rodar um fluxo do Github Actions sem precisar fazer o push do seu código para o repositório, diretamente da sua máquina.</p>
+
+<p><a href="https://logs-en.zozo.dev.br/running-the-github-actions-workflows-locally.html">In English 🇺🇸 🇬🇧</a></p>
+<p>A ferramenta que nos brinda com essa possibilidade de economizar tempo, não nos repetirmos (já que eu não preciso desenvolver um outro fluxo local) e ter um rápido retorno (e também não gastar os 2000 minutos gratuitos à toa 😃), se chama <a href="https://github.com/nektos/act" title="act" target="_blank" rel="noopener noreferrer">act</a>.</p>
+<h3>Como funciona</h3>
+<p>Ela funciona lendo seus scripts yaml do Github Actions contidos no diretório <code>.github/workflows/</code>e usando a API do Docker para baixar as imagens correspondentes a cada action definida no script e depois de determinada as dependências e a trilha de execução, novamente ela usa a API do Docker para executar as actions usando as imagens previamente baixadas.</p>
+<h3>Instalando</h3>
+<h4>Pré-requisitos</h4>
+<ul>
+<li>Engine do Docker instalado (um pouco óbvio, né 😃)
+<ul>
+<li>Posso usar o podman ou outra engine?
+<ul>
+<li>Na documentação, os desenvolvedores falam que pode funcionar, mas eles não garantem, mas por exemplo, no meu caso eu estou usando o podman sem problemas, mas tive que instalar o pacote <strong>podman-docker </strong>na minha distro.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4>Rodando o script de instalação</h4>
+<p>Para instalar em qualquer distro (e Mac) basta rodar o comando abaixo:</p>
+<pre>curl https://raw.githubusercontent.com/nektos/act/master/install.sh <span class="pl-k">|</span> sudo bash</pre>
+<p>Para Windows, vá até a página de <a href="https://github.com/nektos/act/releases/latest" title="releases" target="_blank" rel="noopener noreferrer">releases</a> do projeto e faça download do zip que correspondente a sua arquitetura</p>
+<h3>Comandos de exemplo</h3>
+<pre><strong>act [&lt;event&gt;] [options]</strong><br># Se nenhum &lt;event&gt; for passado, o padrão será "on: push"<br><br><strong>act</strong><br># Para rodar o fluxo usando o evento padrão<br><br><strong>act -l</strong><br># Lista os fluxos do evento padrão<br><br><strong>act workflow_dispatch -l</strong><br># Lista os fluxos do evento workflow_dispatch (evento de execução manual dentro do Github Actions)<br><br><strong>act pull_request</strong><br># Roda os fluxos relacionados ao evento pull_request<br><br><strong>act workflow_dispatch</strong><br># Roda os fluxos relacionados ao evento workflow_dispatch<br><br><strong>act -j teste</strong><br># Roda um job específico do evento padrão<br><br><strong>act -n</strong><br># Roda no modo dry-run no evento padrão<br><br><strong>act -v</strong><br># Roda, ativando o modo verboso dos logs para o evento padrão<br><br><strong>act -P &lt;imagem&gt;</strong><br># Para trocar, se necessário uma imagem padrão de uma action<br><br><strong>act -s minha_secret=abcde</strong><br># Para simular as secrets do Github Actions (também é possível simular criando no diretório de trabalho um arquivo chamado .secrets, que ele é lido automaticamente pelo act)</pre>
+<h3>Demo</h3>
+<p>
+<script id="asciicast-501439" src="https://asciinema.org/a/501439.js" async=""></script>
+</p>
+<p>Concluindo, na minha opinião é uma ferramenta mais do que necessária para aqueles que trabalham no dia-a-dia com o Github Actions, claro que nem tudo é perfeito nem sempre ela consegue simular 100% do comportamento do ambiente, às vezes são necessárias algumas adaptações, mas com certeza é uma ferramenta para você ter no seu cinto de utilidades se você trabalha com o Github. </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Diagramas como Código</title>
         <author>
@@ -19,7 +74,7 @@
             <category term="python"/>
             <category term="diagramas"/>
 
-        <updated>2022-06-12T20:23:53-03:00</updated>
+        <updated>2022-06-13T23:43:43-03:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://logs-pt.zozo.dev.br/media/posts/5/python-diagrama-3.png" alt="" />
@@ -33,6 +88,7 @@
                 <p>Venha, venha, venha descobrir como gerar diagramas usando código Python!!</p>
 
 
+<p><a href="https://logs-en.zozo.dev.br/diagrams-as-code.html">In English 🇺🇸 🇬🇧</a></p>
 <p>No meu dia-a-dia de instrutor, um dos trabalhos é a criação de diagramas que ilustrem de forma clara para os alunos o tópico que está sendo apresentado, existem muitas boas ferramentas gráficas online como o <a href="https://draw.io">draw.io</a>, <a href="https://www.lucidchart.com">LucidChart</a>, entre outras.</p>
 <p>Porém apesar dessas ferramentas serem bem intuitivas e fáceis de usar, quando você precisa escalar a criação de diagramas, precisa criar diagramas trazendo informações de ferramentas externas ou mesmo criar diagramas simples de forma rápida, você acaba esbarrando em problemas nas opções de formatação e na falta de uma automação dessas ferramentas, que dificultam a criação de uma “fábrica” de diagramas.</p>
 <p>Pensando neste cenário, o Python tem um pacote que pode ser utilizado para representar e gerar diagramas como código, facilitando a criação dessa “fábrica”.</p>
